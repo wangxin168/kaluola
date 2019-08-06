@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript"></script>
+		<script src="js/music.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/pc.jpg" alt="" class="beiji" />
+			<a class="mscBtn" style="cursor:pointer;">
+				<img src="img/yinyue.png" class="yinyue" />
+				<img src="img/clo_yin.png" class="clo_yin" />
+			</a>
+			<audio id="bgMusic" src="My%20Way%20Brand%20Movie.mp3" preload="auto" autoplay="autoplay"></audio>
+			<div class="con_box">
+				<!--弹幕-->
+				<div class="lanse"></div>
+				<!-- liuzi -->
+				<div class="liu_box">
+					<p>姓 名</p>
+					<p><input type="text" id="name_con"></p>
+					<p>手 机 号</p>
+					<p><input type="text" id="phone_con"></p>
+					<p>选 择 经 销 商</p>
+					<p><select id="ftms_province" name="order_pro"></select></p>
+					<p><select id="ftms_city" name="order_city">
+							<option>请选择城市</option>
+						</select></p>
+					<p><select id="ftms_dealer" name="ftms_dealer">
+							<option>选择对应的经销商</option>
+						</select></p>
+					<p>意 向 车 型</p>
+					<p><select id="yixiang" name="yixiang">
+							<option>请选择意向车型</option>
+							<option value="115">全新卡罗拉</option>
+							<option value="116">全新卡罗拉双擎</option>
+						</select></p>
+					<p>选 择 支 持 的 关 键 字</p>
+					<p><select id="guanjian" name="guanjian">
+							<option>请选择关键词</option>
+						</select></p>
+					<p>选 择 支 持 的 口 碑</p>
+					<p><select id="koubei" name="koubei">
+							<option>请选择口碑</option>
+						</select></p>
+					<p>邮 寄 地 址</p>
+					<p><select id="sheng" name="sheng">
+							<option>省</option>
+						</select></p>
+					<p><select id="city" name="city">
+							<option>市</option>
+						</select></p>
+					<p><input type="text" placeholder="区,县,街道,门牌号" id="address"></p>
+				</div>
+				<!-- <img src="img/canyu.png" class="canyu" id="ok_con"/> -->
+				<div class="canyu can_yao" id="ok_con">我 要 参 与</div>
+				<div class="canyu can_no" style="display: none;">已 参 与</div>
+				<img src="img/shuom.png" class="shuom" />
+				<img src="img/lipin.png" alt="" class="lipin" />
+				<img src="img/taozhuang.png" class="taozhuang" />
+
+				<!-- 规则 -->
+				<div class="rule">
+					<div class="close_box"><img src="img/cha.png" alt=""></div>
+					<div class="rule_box">
+						<div class="rule_white">
+							<p class="title">活动说明</p>
+							<img src="img/fenge.png" alt="" class="xian">
+						</div>
+					</div>
+				</div>
+				<!-- 留资 -->
+				<!-- <div class="liuzi">
+					<div class="close_box"><img src="img/cha.png" alt=""></div>
+					<div class="liuzi_box">
+						<div class="liuzi_white"> -->
+				<!-- 姓名 -->
+				<!-- <div class="box_con" style="margin-top: 0.5rem;">
+								<text class="biao">姓 &emsp; 名：</text>
+								<input type="text" id="name_con">
+							</div> -->
+				<!-- 手机号 -->
+				<!-- <div class="box_con">
+								<text class="biao">手 机 号：</text>
+								<input type="text" id="phone_con">
+							</div> -->
+				<!-- 选择经销商 -->
+				<!-- <div class="box_con">
+								<text class="biao">选 择 经 销 商：</text>
+								<select id="ftms_province" name="order_pro"></select>
+							</div>
+							<div class="box_con">
+								<text style="opacity: 0;" class="biao">选 择 经 销 商：</text>
+								<select id="ftms_city" name="order_city">
+									<option>请选择城市</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text style="opacity: 0;" class="biao">选 择 经 销 商：</text>
+								<select id="ftms_dealer" name="ftms_dealer">
+									<option>选择对应的经销商</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text class="biao">意 向 车 型：</text>
+								<select id="yixiang" name="yixiang">
+									<option>请选择意向车型</option>
+									<option value="115">全新卡罗拉</option>
+									<option value="116">全新卡罗拉双擎</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text class="biao">选 择 支 持 的 关 键 词：</text>
+								<select id="guanjian" name="guanjian" style="width: 1.5rem;">
+									<option>请选择关键词</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text class="biao">选 择 支 持 的 口 碑：</text>
+								<select id="koubei" name="koubei" style="width: 1.4rem;">
+									<option>请选择口碑</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text class="biao">邮 寄 地 址：</text>
+								<select id="sheng" name="sheng">
+									<option>省</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text style="opacity: 0;" class="biao">邮 寄 地 址：</text>
+								<select id="city" name="city">
+									<option>市</option>
+								</select>
+							</div>
+							<div class="box_con">
+								<text style="opacity: 0;" class="biao">邮 寄 地 址：</text>
+								<input type="text" placeholder="区,县,街道,门牌号" id="address">
+							</div>
+							<button id="ok_con">确定</button> -->
+				<!-- </div> -->
+				<!-- </div> -->
+				<!-- </div> -->
+			</div>
+		</div>
+	</body>
+	<script src="https://api.ftms.com.cn/Public/Admin/Js/region.car-1.2.1.js?123456"></script>
+	<script>
+		if ($(window).width() >= 750) {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth * 100 / 1920 + "px";
+			window.addEventListener("resize", function() {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth * 100 / 1920 + "px"
+			}, false)
+			// $(".beiji").attr("src", "http://intf.phev.test511.com/pc.jpg");
+			
+			$(".beiji").attr("src", "img/pc.jpg");
+		
+		} else if ($(window).width() < 750) {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth * 100 / 750 + "px";
+			window.addEventListener("resize", function() {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth * 100 / 750 + "px"
+			}, false)
+			$(".beiji").attr("src", "img/wap.png");
+		
+		}
+		$('body').height($('body')[0].clientHeight);
+		
+		$("input").focus(function() {
+			$('body').height($('body')[0].clientHeight);
+		});
+		$("select").focus(function() {
+			$('body').height($('body')[0].clientHeight);
+		});
+		$("input").blur(function() {
+			// window.parent.postMessage(3, '*');
+			document.body.scrollTop = document.body.scrollTop
+		});
+		$('select').blur(function() {
+			// window.parent.postMessage(3, '*');
+			document.body.scrollTop = document.body.scrollTop
+		})
+		var is_phone = '';
+		//判断手机打开还是电脑打开
+		if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+			is_phone = 'H5';
+			console.log("h5");
+		} else {
+			is_phone = 'PC';
+			console.log("pc");
+		}
+		var my_url = 'https://intf.kbdev.test511.com/';
+		// 活动说行显示
+		$('.shuom').click(function() {
+			$('.rule').show();
+		})
+		// 关闭按钮隐藏弹框
+		$('.close_box').click(function() {
+			$('.rule').hide();
+			$('.liuzi').hide();
+		})
+		// 留资显示
+		$('.canyu').click(function() {
+			$('.liuzi').show();
+		})
+		// 获取关键词
+		$.ajax({
+			url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=keywords_all',
+			data: {
+
+			},
+			success: function(data) {
+				var jsonStr = JSON.parse(data);
+				var guan_data = jsonStr.data
+				// console.log(guan_data)
+				var picker = '';
+				$.each(guan_data, function(i, obj) {
+					picker += '<option value="' + obj.id + '">'
+					picker += obj.keywords
+					picker += '</option>'
+				})
+				$('#guanjian').append(picker)
+			},
+			error: function(error) {
+				console.log(error)
+			}
+		})
+		// 关键词改变后
+		$("#guanjian").change(function(e) {
+			//要触发的事件
+			var guan_val = $('#guanjian option:selected').val();
+			console.log(guan_val)
+			// 获取口碑
+			$.ajax({
+				url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=koubei_all',
+				data: {
+					parent_id: guan_val
+				},
+				success: function(data) {
+					var kou_zhuan = JSON.parse(data);
+					var kou_data = kou_zhuan.data
+					// console.log(kou_data)
+					$('#koubei').html('<option>请选择口碑</option>')
+					var picker = '';
+					$.each(kou_data, function(i, obj) {
+						picker += '<option value="' + obj.id + '">'
+						picker += obj.koubei
+						picker += '</option>'
+					})
+					$('#koubei').append(picker)
+				},
+				error: function(error) {
+					console.log(error)
+				}
+			})
+		});
+		// 省
+		$.ajax({
+			url: my_url + 'index.php?g=Fawtoyota&m=Dealer&a=provinceNameList',
+			data: {
+
+			},
+			success: function(data) {
+				var shengStr = JSON.parse(data);
+				var sheng_data = shengStr.data
+				console.log(sheng_data)
+				var picker = '';
+				$.each(sheng_data, function(i, obj) {
+					picker += '<option value="' + obj.id + '">'
+					picker += obj.area_name
+					picker += '</option>'
+				})
+				$('#sheng').append(picker)
+			},
+			error: function(error) {
+				console.log(error)
+			}
+		})
+		// 省改变后
+		$("#sheng").change(function(e) {
+			//要触发的事件
+			var sheng_val = $('#sheng option:selected').val();
+			console.log(sheng_val)
+			// 获取市
+			$.ajax({
+				url: my_url + 'index.php?g=Fawtoyota&m=Dealer&a=cityNameList',
+				data: {
+					parent_id: sheng_val
+				},
+				success: function(data) {
+					var shiStr = JSON.parse(data);
+					// console.log(shiStr)
+					var shi_data = shiStr.data
+					console.log(shi_data)
+					$('#city').html('<option>市</option>')
+					var picker = '';
+					$.each(shi_data, function(i, obj) {
+						picker += '<option>'
+						picker += obj.area_name
+						picker += '</option>'
+					})
+					$('#city').append(picker)
+				},
+				error: function(error) {
+					console.log(error)
+				}
+			})
+		});
+		// 提交留资
+		$('#ok_con').click(function() {
+			console.log(111)
+			var name_con = $('#name_con').val()
+			var phone_con = $('#phone_con').val()
+			var provinceid = $("select[name='order_pro']").find("option:selected").val();
+			var provincename = $("select[name='order_pro']").find("option:selected").text();
+			var cityid = $("select[name='order_city']").find("option:selected").val();
+			var cityname = $("select[name='order_city']").find("option:selected").text();
+			var j_id = $("select[name='ftms_dealer']").find("option:selected").val();
+			var j_name = $("select[name='ftms_dealer']").find("option:selected").text();
+			var yi_id = $("select[name='yixiang']").find("option:selected").val();
+			var yi_name = $("select[name='yixiang']").find("option:selected").text();
+			var guanjian = $("select[name='guanjian']").find("option:selected").text();
+			var koubei = $("select[name='koubei']").find("option:selected").text();
+			var sheng = $("select[name='sheng']").find("option:selected").text();
+			var city = $("select[name='city']").find("option:selected").text();
+			var address = $('#address').val()
+			// if (name_con && phone_con && provincename && cityname && j_name && yi_name && guanjian && koubei && sheng && city &&address) {
+			if (name_con.length == 0) {
+				alert('请您完善信息')
+				return;
+			} else if (name_con.match(/^\s+$/)) {
+				alert('请您完善信息')
+				return;
+			} else if (provincename == "请选择省份") {
+				alert('请您选择省份')
+				return;
+			} else if (cityname == "请选择城市") {
+				alert('请您选择城市')
+				return;
+			} else if (j_name == "选择经销商") {
+				alert('请您选择经销商')
+				return;
+			} else if (yi_name == "请选择意向车型") {
+				alert('请选择意向车型')
+				return;
+			} else if (guanjian == "请选择关键词") {
+				alert('请选择关键词')
+				return;
+			} else if (koubei == "请选择口碑") {
+				alert('请选择口碑')
+				return;
+			} else if (sheng == "省") {
+				alert('请选择省')
+				return;
+			} else if (city == "市") {
+				alert('请选择市')
+				return;
+			} else if (address.length == 0) {
+				alert('请您完善信息')
+				return;
+			} else if (address.match(/^\s+$/)) {
+				alert('请您完善信息')
+				return;
+			}
+			$.ajax({
+				url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=add',
+				data: {
+					name: name_con,
+					s_phone: phone_con,
+					provinceid: provinceid,
+					provincename: provincename,
+					cityid: cityid,
+					cityname: cityname,
+					j_id: j_id,
+					j_name: j_name,
+					buy_car: yi_name,
+					buy_car_id: yi_id,
+					koubei: koubei,
+					keywords: guanjian,
+					yj_provincename: sheng,
+					yj_cityname: city,
+					yj_address: address,
+					orderterminal: is_phone
+				},
+				success: function(data) {
+					console.log(data)
+				},
+				error: function(error) {
+					console.log(error)
+				}
+			})
+			// }
+		})
+
+		var dianhua = '13260238982';
+		$('#yixiang').change(function() {
+			var yixiang_val = $('#yixiang option:selected').val();
+			console.log(yixiang_val)
+			// 判断当前用户是否留资过
+			$.ajax({
+				url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=type_em_s',
+				data: {
+					s_phone: dianhua
+				},
+				success: function(data) {
+					var is_liuzi = JSON.parse(data);
+					var yixiang_data = is_liuzi.data
+					for (var i = 0; i < yixiang_data.length; i++) {
+						console.log(yixiang_data[i].buy_car_id)
+						if (yixiang_data[i].buy_car_id == yixiang_val) {
+							console.log('不能选')
+							$('.can_yao').hide();
+							$('.can_no').show();
+						} else if (yixiang_data[i].buy_car_id != yixiang_val) {
+							console.log('能选')
+							$('.can_yao').show();
+							$('.can_no').hide();
+						}
+					}
+				},
+				error: function(error) {
+					console.log(error)
+				}
+			})
+		})
+
+		// 查看订单信息(有没有留资成功过 如果有 会有弹幕)
+
+		var shuzu = []
+		var pageW = parseInt($(".lanse").width());
+		var pageH = parseInt($('.lanse').height());
+		var boxDom = $(".lanse");
+		var Top, Right;
+		var width;
+		width = pageW;
+		var time;
+
+		function hebing() {
+			$.ajax({
+				url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=type_em_s',
+				data: {
+					s_phone: dianhua
+				},
+				success: function(data) {
+					var dan_con = JSON.parse(data);
+					console.log(dan_con.data)
+					var dan_num = dan_con.data
+
+					// 如果有订单 追加
+					if (dan_con.status == 200) {
+						$.ajax({
+							url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=koubei_all_dm',
+							success: function(data) {
+								var danmu_con = JSON.parse(data);
+								var danmu_num = danmu_con.data
+								shuzu = dan_num.concat(danmu_num)
+								console.log(shuzu)
+								var picker = ''
+								var timer = setInterval(function() {
+									for (var i = 0; i < shuzu.length; i++) {
+										time = parseInt(Math.random() * (20000 - 10000 + 1) + 10000, 10);
+										var text = shuzu[i].keywords
+										var jishao = shuzu[i].koubei
+										var zan = shuzu[i].num
+										if (shuzu[i].order_status == 0) {
+											var qvbie = 'cheng'
+										} else {
+											var qvbie = 'wei'
+										}
+										if (text == "") {
+											return;
+										}
+
+										var creSpan = $("<p class='string " + qvbie + "'></p>");
+
+										creSpan.html("<span class='title " + qvbie + "'>" + text + "：" + "</span>" + "<span class='jieshao " +
+											qvbie + "'>" + jishao + "</span>" + "<img src='img/bang.png' />" + "<span class='dianzan'>" + zan +
+											"</span>");
+										Top = parseInt(pageH * (Math.random()));
+										if (Top > pageH - 100) {
+											Top = pageH - 100;
+										}
+										creSpan.css({
+											"top": Top,
+											"right": -100
+										});
+										boxDom.append(creSpan);
+										var spanDom = $(".lanse>p:last-child");
+										spanDom.stop().animate({
+											"right": pageW + 300 //移动的距离
+										}, time, "linear", function() {
+											$(this).remove();
+										});
+									}
+								}, 8000)
+							}
+						})
+					} else if (dan_con.status == 300) {
+						$.ajax({
+							url: my_url + 'index.php?g=Fawtoyota&m=Subscribe&a=koubei_all_dm',
+							success: function(data) {
+								var danmu_con = JSON.parse(data);
+								shuzu = danmu_con
+								var picker = ''
+								var timer = setInterval(function() {
+									for (var i = 0; i < shuzu.length; i++) {
+										time = parseInt(Math.random() * (20000 - 10000 + 1) + 10000, 10);
+										var text = shuzu[i].keywords
+										var jishao = shuzu[i].koubei
+										var zan = shuzu[i].num
+										if (shuzu[i].order_status == 0) {
+											var qvbie = 'cheng'
+										} else {
+											var qvbie = 'wei'
+										}
+										if (text == "") {
+											return;
+										}
+
+										var creSpan = $("<p class='string " + qvbie + "'></p>");
+
+										creSpan.html("<span class='title " + qvbie + "'>" + text + "</span>" + "<span class='jieshao " +
+											qvbie + "'>" + jishao + "</span>" + "<img src='img/bang.png' />" + "<span class='dianzan'>" + "+" +
+											zan + "</span>");
+										Top = parseInt(pageH * (Math.random()));
+										if (Top > pageH - 100) {
+											Top = pageH - 100;
+										}
+										creSpan.css({
+											"top": Top,
+											"right": -100
+										});
+										boxDom.append(creSpan);
+										var spanDom = $(".lanse>p:last-child");
+										spanDom.stop().animate({
+											"right": pageW + 300 //移动的距离
+										}, time, "linear", function() {
+											$(this).remove();
+										});
+									}
+								}, 8000)
+							}
+						})
+					}
+
+				},
+				error: function(error) {
+					console.log(error)
+				}
+			})
+			console.log(shuzu)
+		}
+		hebing();
+	</script>
+</html>
