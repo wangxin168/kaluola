@@ -7,9 +7,20 @@
 
 }
 
+html {
+	font-size: 1.2vw;
+	position: relative;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
 .box {
 	width: 100%;
 	height: 100%;
+	position: relative;
 }
 
 .beiji {
@@ -43,13 +54,13 @@
 .con_box {
 	width: 100%;
 	position: absolute;
-	top: 0.5rem;
+	top: 1.5rem;
 	left: 0;
 }
 
 .lanse {
 	width: 100%;
-	height: 6.5rem;
+	height: 8.5rem;
 	/* background: blue; */
 	margin: 0 auto;
 	/* background: url(../img/comput.png) no-repeat; */
@@ -62,7 +73,7 @@
 	width: 2.93rem;
 	height: 0.44rem;
 	display: block;
-	margin: 3rem auto 0;
+	margin: 2rem auto 0;
 }
 
 .taozhuang {
@@ -74,61 +85,104 @@
 
 .liu_box {
 	width: 6rem;
-	height: 8rem;
+	height: 6.5rem;
 	background: url(../img/kuang.png) no-repeat;
 	background-size: 100% 100%;
-	margin: 11rem auto 0;
+	margin: 7.5rem auto 0;
 	overflow: hidden;
 }
-.liu_box>p:nth-of-type(1){
-	margin-top: 0.5rem;
+
+.liu_box_box {
+	width: 4rem;
+	margin: auto;
+
 }
-.liu_box>p {
+
+.liu_box_box>p:nth-of-type(1) {
+	margin-top: 0.4rem;
+}
+
+.zhichi {
+	width: 3.4rem;
+	height: 1.5rem;
+	margin: 0.08rem auto 0;
+	background: url(../img/dilan.png) no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+.liu_box_box p {
 	color: white;
-	font-size: 0.18rem;
+	font-size: 0.16rem;
 	width: 100%;
-	text-align: center;
-	margin-top: 0.12rem;
+	text-align: left;
+	margin-top: 0.11rem;
+	padding: 0 0.3rem;
+	box-sizing: border-box;
+	display: flex;
+	/* justify-content: space-between; */
 }
-.liu_box input{
+
+.zhichi>p {
+	padding: 0 0.15rem;
+}
+
+.liu_box input {
 	/* margin-top: 0.2rem; */
-	width: 2.5rem;
+	width: 4rem;
 	height: 0.25rem;
 	display: inline-block;
 	border: none;
-	text-align: center;
+	text-align: left;
 	background: #AACFEC;
+	padding: 0 0.1rem;
+	box-sizing: border-box;
+	color: #0075D5;
 }
-.liu_box select{
-	width: 2.5rem;
+
+.liu_box select {
+	width: 3.4rem;
 	height: 0.25rem;
 	border: none;
 	background: #AACFEC;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	padding: 0 0.1rem;
+	box-sizing: border-box;
+	color: #0075D5;
 }
+
+select::-ms-expand {
+	display: none;
+}
+
 .canyu {
 	width: 2.40rem;
 	height: 0.64rem;
 	/* display: block; */
-	margin: 1.2rem auto 0;
+	margin: 0.8rem auto 0;
 	font-size: 0.32rem;
 	color: #ffffff;
 	text-align: center;
 	line-height: 0.64rem;
 	background: url(../img/landi.png) no-repeat;
 	background-size: 100% 100%;
-	font-style:oblique;
+	font-style: oblique;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .shuom {
 	width: 1.7rem;
 	height: 0.29rem;
 	display: block;
-	margin: 0.7rem auto 0;
+	margin: 0.4rem auto 0;
+	cursor: pointer;
 }
 
 .rule,
-.liuzi {
+.wanshan,.succ,.wei_box_box {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -136,7 +190,7 @@
 	height: 100%;
 	display: none;
 	background: rgba(0, 0, 0, 0.7);
-	z-index: 111;
+	z-index: 1000;
 }
 
 /* 规则 */
@@ -156,10 +210,23 @@
 	box-sizing: border-box;
 }
 
+.rule_da {
+	width: 106%;
+	height: 70%;
+	padding: 0.2rem 0;
+	box-sizing: border-box;
+	position: absolute;
+	top: 10%;
+	left: 0;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
 .rule .close_box {
 	text-align: right;
 	position: absolute;
-	top: 10%;
+	top: 3%;
+	/* top: 10%; */
 	right: 36%;
 	z-index: 1;
 }
@@ -174,8 +241,6 @@
 	width: 100%;
 	height: 4.74rem;
 	background: white;
-	overflow: hidden;
-	overflow-y: auto;
 	margin: auto;
 	padding: 0 0.2rem;
 	box-sizing: border-box;
@@ -183,11 +248,11 @@
 	background-size: 100% 100%;
 }
 
-.rule .rule_box .rule_white .title {
+.rule .rule_box .rule_white .title_con {
 	font-size: 0.26rem;
 	text-align: center;
 	color: #ffffff;
-	margin-top: 0.5rem;
+	/* margin-top: 0.5rem; */
 }
 
 .rule .rule_box .rule_white .xian {
@@ -199,53 +264,177 @@
 .rule .rule_box .rule_white .rule_con {
 	padding: 0 0.2rem;
 	box-sizing: border-box;
-	font-size: 0.16rem;
+	font-size: 0.18rem;
 	margin-top: 0.19rem;
-	color: #838383;
+	color: #ffffff;
+	box-sizing: border-box;
+	padding: 0 0.5rem 0 0.3rem;
+	line-height: 0.33rem;
 }
 
-/* 留资 */
-.liuzi .liuzi_box {
-	/* width: 7.61rem; */
-	/* height: 9.74rem; */
-	width: 22%;
-	height: 6.74rem;
+.bols {
+	font-size: 0.2rem;
+	font-weight: bold;
+}
+
+.wanshan .wanshan_box {
+	width: 4.64rem;
+	height: 2.74rem;
 	position: absolute;
 	top: 2rem;
-	/* bottom: 0; */
-	/* left: 5.795rem; */
 	left: 39%;
-	/* margin: auto; */
 	overflow: hidden;
-	padding: 0.29rem 0;
-	box-sizing: border-box;
 }
 
-.liuzi .close_box {
+.wanshan .wanshan_box .wanshan_white {
+	width: 4.64rem;
+	height: 2.74rem;
+	background: white;
+	margin: auto;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 2.74rem;
+	background: url(../img/tan.png) no-repeat;
+	background-size: 100% 100%;
+	color: white;
+	font-size: 0.4rem;
+	font-weight: bold;
+}
+
+.wanshan .wan_box {
 	text-align: right;
 	position: absolute;
-	top: 10%;
-	right: 36%;
+	top: 2.5%;
+	/* top: 10%; */
+	right: 34.5%;
 	z-index: 1;
 }
 
-.liuzi .close_box img {
+.wanshan .wan_box img {
+	width: 40px;
+	height: 40px;
+	margin: 2% 3% 0;
+}
+.wei_box_box .wei_box {
+		width: 4.64rem;
+		height: 2.74rem;
+		position: absolute;
+		top: 2rem;
+		left: 39%;
+		overflow: hidden;
+	}
+	
+	.wei_box_box .wei_box .wei_white {
+		width: 4.64rem;
+		height: 2.74rem;
+		background: white;
+		margin: auto;
+		padding: 0 0.2rem;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 2.74rem;
+		background: url(../img/tan.png) no-repeat;
+		background-size: 100% 100%;
+		color: white;
+		font-size: 0.4rem;
+		font-weight: bold;
+	}
+.succ .success_box {
+	width: 4.64rem;
+	height: 3.74rem;
+	position: absolute;
+	top: 2rem;
+	left: 39%;
+	overflow: hidden;
+}
+
+.succ .success_box .succ_white {
+	width: 4.64rem;
+	height: 3.74rem;
+	background: white;
+	margin: auto;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+	background: url(../img/tan.png) no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+.succ .success_box .succ_white p {
+	width: 100%;
+	text-align: center;
+	margin-top: 0.7rem;
+	color: white;
+	font-size: 0.4rem;
+	font-weight: bold;
+}
+
+.succ .success_box .succ_white .queding {
+	background: url(../img/qianlan.png) no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	width: 2.86rem;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	margin: 0.5rem auto 0;
+	color: white;
+	font-size: 0.3rem;
+	font-weight: bold;
+}
+.succ .success_box .succ_white .title_jia{
+	text-align: center;
+	color: white;
+	font-size: 0.24rem;
+	margin-top: 0.3rem;
+}
+.succ .succ_box {
+	text-align: right;
+	position: absolute;
+	top: 2.5%;
+	/* top: 10%; */
+	right: 34.5%;
+	z-index: 1;
+}
+
+.succ .succ_box img {
 	width: 40px;
 	height: 40px;
 	margin: 2% 3% 0;
 }
 
-.liuzi .liuzi_box .liuzi_white {
+.guding {
 	width: 100%;
-	height: 6rem;
-	background: white;
+	overflow-y: hidden;
+	/*为了兼容普通PC的浏览器*/
+	height: 100%;
+	position: fixed;
+}
+
+.erdiansan {
+	width: 1.6rem !important;
+}
+
+.erdianleft {
+	width: 1.7rem !important;
+	margin-left: 0.1rem;
+}
+
+.xiala_box {
+	position: relative;
 	overflow: hidden;
-	/* overflow-y: auto; */
-	margin: auto;
-	/* padding: 0 0.2rem; */
-	box-sizing: border-box;
-	background: url(../img/huo_ta.png) no-repeat;
-	background-size: 100% 100%;
+}
+
+.xiala {
+	position: absolute;
+	top: 0.07rem;
+	right: 0.05rem;
+}
+
+.xiala2 {
+	position: absolute;
+	top: 0.07rem;
+	right: 0.05rem;
 }
 
 .biao {
@@ -267,6 +456,11 @@
 .box_con input {
 	width: 2.2rem;
 	height: 0.2rem;
+	border-radius: 0;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0;
 }
 
 .box_con select {
@@ -274,6 +468,11 @@
 	height: 0.2rem;
 	text-align: right;
 	color: #499dd9;
+	border-radius: 0;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0;
 }
 
 .box_con select option {
@@ -282,32 +481,36 @@
 
 ::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
-	color: #499dd9;
+	/* color: #499dd9; */
+	color: #0075D5;
 }
 
 ::-moz-placeholder {
 	/* Firefox 19+ */
-	color: #499dd9;
+	/* color: #499dd9; */
+	color: #0075D5;
 }
 
 :-ms-input-placeholder {
 	/* IE 10+ */
-	color: #499dd9;
+	/* color: #499dd9; */
+	color: #0075D5;
 }
 
 :-moz-placeholder {
 	/* Firefox 18- */
-	color: #499dd9;
+	/* color: #499dd9; */
+	color: #0075D5;
 }
 
 .string {
 	min-width: 0.4rem;
-	max-width: 2rem;
+	max-width: 8rem;
 	height: 0.41rem;
 	position: absolute;
-	overflow: hidden;
+	/* overflow: hidden; */
 	color: #ffffff;
-	font-size: 0.18rem;
+	font-size: 0.2rem;
 	line-height: 0.41rem;
 	cursor: pointer;
 	white-space: nowrap;
@@ -316,6 +519,8 @@
 	/* background: url(../img/222.png) no-repeat; */
 	/* background-size: 100% 100%; */
 	padding: 0 0.2rem;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
 }
 
 .string img {
@@ -330,84 +535,352 @@
 }
 
 .jieshao {
-	font-size: 0.18rem;
-	font-style: oblique
+	font-size: 0.24rem;
+	font-style: oblique;
+	font-weight: bold;
 }
 
 .title {
-	font-size: 0.24rem;
-	font-style: oblique
+	font-size: 0.28rem;
+	font-style: oblique;
+	font-weight: bold;
 }
 
 .bianse {
-	color: red;
-	font-style: oblique
+	/* color: red; */
+	font-style: oblique;
 }
 
 .cheng {
-	color: red;
-	font-style: oblique
+	/* color: red; */
+	font-style: oblique;
 }
 
 .dianzan {
-	font-size: 0.18rem;
+	font-size: 0.24rem;
 	color: yellow;
+	font-weight: bold;
 }
+
 @media screen and (max-width: 750px) {
-	.con_box{
-		top: 0;
+	.con_box {
+		top: 0.5rem;
 	}
-	.lanse{
-		height: 4.5rem;
+
+	.lanse {
+		height: 5.9rem;
 	}
+
 	.liu_box {
-		width: 4.11rem;
-		height: 6.19rem;
-		margin: 3.7rem auto 0;
+		width: 5.11rem;
+		height: 6.5rem;
+		margin: 1.3rem auto 0;
 	}
-	.liu_box>p:nth-of-type(1){
+
+	.liu_box>p:nth-of-type(1) {
 		margin-top: 0.3rem;
 	}
+
 	.liu_box>p {
-		font-size: 0.14rem;
-		margin-top: 0rem;
+		font-size: 0.16rem;
+		margin-top: 0.08rem;
 	}
-	.liu_box input{
-		width: 2.5rem;
+
+	.liu_box input {
+		width: 4rem;
 		height: 0.25rem;
-		font-size: 0.14rem;
+		font-size: 0.16rem;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-khtml-border-radius: 0;
 	}
-	.liu_box select{
-		width: 2.5rem;
+
+	.liu_box select {
+		/* width: 4rem; */
 		height: 0.25rem;
-		font-size: 0.14rem;
+		font-size: 0.16rem;
+		outline: none;
+		/* color: #a8a8a8; */
+		border: none;
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-khtml-border-radius: 0;
 	}
+
 	.canyu {
 		width: 2.40rem;
 		height: 0.64rem;
-		margin: 0.4rem auto 0;
+		margin: 0.3rem auto 0;
 		font-size: 0.32rem;
 		color: #ffffff;
 		text-align: center;
 		line-height: 0.64rem;
+		cursor: pointer;
 	}
-	
+
+	.erdiansan {
+		width: 1.5rem !important;
+	}
+
+	.erdianleft {
+		width: 1.8rem !important;
+		margin-left: 0.1rem;
+	}
+
+	.xiala2 {
+		width: 0.2rem;
+		height: 0.13rem;
+		right: 0.05rem;
+	}
+
+	.xiala {
+		width: 0.2rem;
+		height: 0.13rem;
+	}
+
 	.shuom {
 		width: 1.7rem;
 		height: 0.29rem;
 		margin: 0.2rem auto 0;
+		cursor: pointer;
 	}
+
 	.lipin {
 		width: 1.71rem;
 		height: 0.26rem;
 		display: block;
-		margin: 0.5rem auto 0;
+		margin: 0.8rem auto 0;
 	}
-	
+
 	.taozhuang {
 		width: 4.34rem;
 		height: 2.2rem;
 		display: block;
 		margin: 0.5rem auto 0;
 	}
+
+	.rule .rule_box {
+		width: 4.3rem;
+		height: 5.71rem;
+		top: 3.5rem;
+		left: 1.6rem;
+		padding: 0.29rem 0;
+	}
+
+	.rule .close_box {
+		text-align: right;
+		position: absolute;
+		/* top: 19%; */
+		top: 13%;
+		right: 17%;
+		z-index: 1;
+	}
+
+	.rule .close_box img {
+		width: 0.5rem;
+		height: 0.5rem;
+		margin: 2% 3% 0;
+	}
+
+	.rule .rule_box .rule_white {
+		width: 100%;
+		height: 4.71rem;
+		background: white;
+		overflow: hidden;
+		overflow-y: auto;
+		margin: auto;
+		padding: 0 0.2rem;
+		box-sizing: border-box;
+		background: url(../img/huo_ta.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.rule .rule_box .rule_white .title_con {
+		font-size: 0.26rem;
+		text-align: center;
+		color: #ffffff;
+		/* margin-top: 0.4rem; */
+	}
+
+	.rule .rule_box .rule_white .xian {
+		width: 90%;
+		display: block;
+		margin: 0.16rem auto 0;
+	}
+
+	.rule .rule_box .rule_white .rule_con {
+		padding: 0 0.6rem 0 0.3rem;
+		box-sizing: border-box;
+		font-size: 0.18rem;
+		margin-top: 0.19rem;
+		/* color: #838383; */
+	}
+
+	.xian {
+		height: 0.14rem;
+	}
+
+	.title {
+		font-size: 0.32rem;
+		font-style: oblique;
+	}
+
+	.string {
+		min-width: 0.65rem;
+		max-width: 6rem;
+		height: 0.41rem;
+	}
+
+	.bols {
+		font-size: 0.2rem;
+	}
+
+	.wanshan .wanshan_box {
+		width: 4.64rem;
+		height: 2.74rem;
+		position: absolute;
+		top: 5rem;
+		left: 1.43rem;
+		overflow: hidden;
+	}
+
+	.wanshan .wanshan_box .wanshan_white {
+		width: 4.64rem;
+		height: 2.74rem;
+		background: white;
+		margin: auto;
+		padding: 0 0.2rem;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 2.74rem;
+		background: url(../img/tan.png) no-repeat;
+		background-size: 100% 100%;
+		color: white;
+		font-size: 0.4rem;
+		font-weight: bold;
+	}
+	
+	.wanshan .wan_box {
+		text-align: right;
+		position: absolute;
+		top: 18.5%;
+		/* top: 10%; */
+		right: 10.5%;
+		z-index: 1;
+	}
+
+	.wanshan .wan_box img {
+		width: 0.5rem;
+		height: 0.5rem;
+		margin: 2% 3% 0;
+	}
+	.wei_box_box .wei_box {
+		width: 4.64rem;
+		height: 2.74rem;
+		position: absolute;
+		top: 5rem;
+		left: 1.43rem;
+		overflow: hidden;
+	}
+	
+	.wei_box_box .wei_box .wei_white {
+		width: 4.64rem;
+		height: 2.74rem;
+		background: white;
+		margin: auto;
+		padding: 0 0.2rem;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 2.74rem;
+		background: url(../img/tan.png) no-repeat;
+		background-size: 100% 100%;
+		color: white;
+		font-size: 0.4rem;
+		font-weight: bold;
+	}
+	.succ .success_box {
+		width: 4.64rem;
+		height: 3.74rem;
+		position: absolute;
+		top: 4rem;
+		left: 1.43rem;
+		overflow: hidden;
+	}
+
+	.succ .success_box .succ_white {
+		width: 4.64rem;
+		height: 3.74rem;
+		background: white;
+		margin: auto;
+		padding: 0 0.2rem;
+		box-sizing: border-box;
+		background: url(../img/tan.png) no-repeat;
+		background-size: 100% 100%;
+		overflow: hidden;
+	}
+
+	.succ .success_box .succ_white p {
+		width: 100%;
+		text-align: center;
+		margin-top: 0.7rem;
+		color: white;
+		font-size: 0.4rem;
+		font-weight: bold;
+	}
+
+	.succ .success_box .succ_white .queding {
+		background: url(../img/qianlan.png) no-repeat;
+		background-size: 100% 100%;
+		text-align: center;
+		width: 2.86rem;
+		height: 0.75rem;
+		line-height: 0.75rem;
+		margin: 0.5rem auto 0;
+		color: white;
+		font-size: 0.3rem;
+		font-weight: bold;
+	}
+	.succ .success_box .succ_white .title_jia{
+		text-align: center;
+		color: white;
+		font-size: 0.24rem;
+		margin-top: 0.3rem;
+	}
+	.succ .succ_box {
+		text-align: right;
+		position: absolute;
+		top: 2.5%;
+		/* top: 10%; */
+		right: 34.5%;
+		z-index: 1;
+	}
+
+	.succ .succ_box img {
+		width: 40px;
+		height: 40px;
+		margin: 2% 3% 0;
+	}
+
+	.jieshao {
+		font-size: 0.26rem;
+		font-style: oblique;
+		font-weight: bold;
+	}
+
+	.title {
+		font-size: 0.38rem;
+		font-style: oblique;
+		font-weight: bold;
+	}
+	.dianzan {
+		font-size: 0.26rem;
+		color: yellow;
+		font-weight: bold;
+	}
+
 }
